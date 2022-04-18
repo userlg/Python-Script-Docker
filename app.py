@@ -1,13 +1,15 @@
 from colorama import init, Fore
 from os import path, linesep
 import mmap
+
+
 yellow = Fore.YELLOW
 
 blue = Fore.BLUE
 
 green = Fore.GREEN
 
-
+# This function alow count the lines inside a file
 def count_lines(filename) -> int:
     with open(filename, "r+") as myfile:
       mm = mmap.mmap(myfile.fileno(), 0)
@@ -25,7 +27,7 @@ def main() -> None:
     filename = 'file.txt'
 
     if path.exists('file.txt'):
-        print(green + '\t\t File already exists \n\n')
+        print(green + '\n\t\t File already exists \n\n')
         f = open(filename,'a')
     else:
         print(green + '\t\t Creating File \n\n' + yellow)
